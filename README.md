@@ -1,21 +1,42 @@
-# DBS Banking System
+# DBS - Banking
 
-A desktop-based GUI banking system developed using **Python**, **Tkinter**, and **MySQL**, with separate interfaces for **customers** and **admins**. This project simulates core banking operations such as login, balance check, fund transfer, and receipt generation, along with admin functionalities for managing user accounts.
+A desktop-based banking system with a Graphical User Interface (GUI) built using Python and MySQL. This project simulates core banking functionalities for both customers and administrators. It uses Tkinter for the interface and integrates with an online MySQL database.
 
-### Key Highlights:
-- Built with Python’s `tkinter` for the front-end interface.
-- Uses an **online MySQL database** for data storage and operations.
-- **Customer Module**:
-  - Login via account ID or number
-  - View balance, profile, and transaction history
-  - Transfer funds to other accounts
-  - Reset password via registered Gmail
-  - Generate and save PDF transaction receipts
-  - Send messages to the bank
-- **Admin Module**:
-  - Login and manage customer records
-  - View and respond to customer messages
-  - Block/unblock customer accounts
+---
+
+## Features
+
+### Customer Interface
+- Login using account number and user ID
+- Change password from inside the app
+- Reset forgotten password via registered Gmail
+- Transfer money to other customers via account number or user ID
+- Generate PDF receipts for every transaction using FPDF
+- Retrieve past transaction receipts if missed during transfer
+- View transaction history
+- View profile details
+- Send messages to the bank
+
+### Admin Interface
+- Admin login to access control panel
+- View and modify all customer records
+- View transaction history of any customer
+- Temporarily block all accounts from logging in with one click
+- Individually block or unblock any customer account
+- Create new customer accounts
+- View customers based on account number or status
+- Read and delete messages sent by customers
+
+---
+
+## Technologies Used
+
+- Python (Tkinter GUI)
+- MySQL (online or local)
+- FPDF (for PDF receipt generation)
+- SMTPLib (for sending recovery emails)
+- Socket (for local IP detection)
+- Random and Time modules
 
 Database credentials are managed in a separate `config.py` file with placeholders to ensure secure and public-friendly uploads.
 
