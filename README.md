@@ -59,7 +59,16 @@ Run the `DB_Creating.py` script below to create the database and necessary table
 
 ### Customer Login
 ![Login](Assets/customer_login.png)
+![](Assets/3.png)
+![](Assets/4.png)
+![](Assets/4.1.png)
+![](Assets/5.png)
+![](Assets/6.png)
+![](Assets/7.png)
+![](Assets/8.png)
+
 
 ### Admin Panel
 ![Admin](Assets/admin_panel.png)
+![](Assets/9.png)
 
