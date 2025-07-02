@@ -20,6 +20,7 @@ Mail_Sender = "your-mail"
 Mail_Password = "your-app password"
 
 
+
 db = mysql.connector.connect(host=DB_HOST,user=DB_USER,passwd = DB_PASSWORD,
                              database = DB_DATABASE)
 myc = db.cursor(buffered=True)
@@ -207,11 +208,13 @@ def welcome():
                                                             tkinter.messagebox.showinfo("Success","Transaction Successful")
                                                             Transfer.config(state=ACTIVE)
                                                             string = strftime('%d/%m/%y, %X')
+                                                            AT = strftime('%d%m%y-%H%M%S')
                                                             t1 = string[:8]
                                                             t2 = string[10:]
                                                             def save():
                                                                 a = filedialog.asksaveasfilename(
-                                                                    filetypes=[("All files", ".*")],)
+                                                                    filetypes=[("PDF File",".pdf"),("All files", ".*")],initialdir="./Receipts",
+                                                                    initialfile=f"DBS_{AT}")
                                                                 if len(a) == 0:
                                                                     pass
                                                                 else:
@@ -227,7 +230,7 @@ def welcome():
                                                                     pdf.text(15, 150, account_holder_name)
                                                                     pdf.text(15, 190, beneficiary_name)
                                                                     pdf.text(15, 227, Transferred_amount)
-                                                                    if a[-1:-5:-1] == "fdp.":
+                                                                    if a.endswith(".pdf"):
                                                                         pdf.output(f"{a}", "F")
                                                                         prints.config(text="Recipt Saved!")
                                                                         prints.config(state=DISABLED)
@@ -855,6 +858,6 @@ def welcome():
             exit(0)
     windows.protocol("WM_DELETE_WINDOW", SUREs)
     windows.mainloop()
+    
 welcome()
 db.close()
-
